@@ -1,0 +1,32 @@
+<ion-view title="New Project" ng-controller="ProjectsCtrl">
+  <ion-content class="has-header has-footer">
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Project</span>
+        <input type="text" placeholder="Some name for this project">
+      </label>
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Clicker Name">
+        </label>
+        <button class="button button-small button-positive">
+          Add Clicker
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-divider">
+        Active Clickers
+      </div>
+      <a class="item item-icon-right" href="#">
+        Banana
+        <i class="icon ion-trash-b"></i>
+      </a>
+    </div>
+
+  </ion-content>
+  <a class="bar bar-footer bar-positive" ui-sref="app.new_project">
+    <div class="title">Create Project</div>
+  </a>
+</ion-view>

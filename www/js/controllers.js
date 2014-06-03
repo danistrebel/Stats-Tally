@@ -6,7 +6,7 @@ angular.module('statstally.controllers', [])
 
 
   $scope.increment = function() {
-      $scope.counter++;
+      $scope.counter+=2;
       console.log($scope.counter);
   };
 

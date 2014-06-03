@@ -15,3 +15,7 @@ platforms/ios/.staging
 
 # Emulator logs
 platforms/ios/cordova/console.log
+
+ios
+
+help

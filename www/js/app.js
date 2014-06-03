@@ -29,7 +29,10 @@ angular.module('statstally', ['ionic', 'statstally.controllers', 'angularLocalSt
       templateUrl: "templates/menu.html"
     })
 
-
+    .state('welcome', {
+      url: "/",
+      templateUrl: "templates/welcome.html"
+    })
 
     .state('app.projects', {
       url: "/projects",
@@ -41,6 +44,16 @@ angular.module('statstally', ['ionic', 'statstally.controllers', 'angularLocalSt
       controller: 'ProjectsCtrl'
     })
 
+    .state('app.new_project', {
+      url: "/projects/new",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/newProject.html"
+        }
+      },
+      controller: 'NewProjectsCtrl'
+    })
+
     .state('app.statistics', {
       url: "/statistics",
       views: {
@@ -50,5 +63,5 @@ angular.module('statstally', ['ionic', 'statstally.controllers', 'angularLocalSt
       }
     });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/projects');
+  $urlRouterProvider.otherwise('/');
 });
