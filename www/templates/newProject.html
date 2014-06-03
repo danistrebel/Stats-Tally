@@ -1,15 +1,15 @@
-<ion-view title="New Project" ng-controller="ProjectsCtrl">
+<ion-view title="New Project" ng-controller="NewProjectCtrl">
   <ion-content class="has-header has-footer">
     <div class="list">
       <label class="item item-input">
         <span class="input-label">Project</span>
-        <input type="text" placeholder="Some name for this project">
+        <input type="text" placeholder="Some name for this project" ng-model="project.name">
       </label>
       <div class="item item-input-inset">
         <label class="item-input-wrapper">
-          <input type="text" placeholder="Clicker Name">
+          <input type="text" placeholder="Clicker Name" ng-model="newClicker.name">
         </label>
-        <button class="button button-small button-positive">
+        <button class="button button-small button-positive" ng-click="addClicker()">
           Add Clicker
         </button>
       </div>
@@ -19,14 +19,14 @@
       <div class="item item-divider">
         Active Clickers
       </div>
-      <a class="item item-icon-right" href="#">
-        Banana
-        <i class="icon ion-trash-b"></i>
-      </a>
+      <div class="item item-icon-right" ng-repeat="clicker in project.clickers">
+        {{clicker.name}}
+        <i class="icon ion-trash-b" ng-click="removeClicker($index)"></i>
+      </div>
     </div>
 
   </ion-content>
-  <a class="bar bar-footer bar-positive" ui-sref="app.new_project">
+  <a class="bar bar-footer bar-positive" ui-sref="app.new_project" ng-click="storeProject()">
     <div class="title">Create Project</div>
   </a>
 </ion-view>

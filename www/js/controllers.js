@@ -1,6 +1,6 @@
 angular.module('statstally.controllers', [])
 
-.controller('ProjectsCtrl', ['$scope','storage', function($scope, storage) {
+.controller('EventCtrl', ['$scope','storage', function($scope, storage) {
 
   storage.bind($scope, 'counter', 42);
 
