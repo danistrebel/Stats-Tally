@@ -35,11 +35,15 @@ angular.module('statstally.controllers')
     }
     else {
       var projects = storage.get('st-projects');
+      var projectHash = CryptoJS.MD5($scope.project.name);
       if(!projects) {
-        projects = [];
+        projects = {};
       }
-      projects.push($scope.project);
+      projects[projectHash] = $scope.project.name;
       storage.set('st-projects', projects);
+
+      storage.set('st-pr-' + projectHash, $scope.project);
+
       $ionicNavBarDelegate.back();
 
     }
