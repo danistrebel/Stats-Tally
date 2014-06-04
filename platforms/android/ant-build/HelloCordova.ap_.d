@@ -29,10 +29,12 @@
 /Users/strebel/Desktop/statstally/platforms/android/assets/www/img/statstally_logo.png \
 /Users/strebel/Desktop/statstally/platforms/android/assets/www/js/app.js \
 /Users/strebel/Desktop/statstally/platforms/android/assets/www/js/controllers \
+/Users/strebel/Desktop/statstally/platforms/android/assets/www/js/services \
 /Users/strebel/Desktop/statstally/platforms/android/assets/www/js/controllers/newProjectCtrl.js \
 /Users/strebel/Desktop/statstally/platforms/android/assets/www/js/controllers/projectCtrl.js \
 /Users/strebel/Desktop/statstally/platforms/android/assets/www/js/controllers/projectsCtrl.js \
 /Users/strebel/Desktop/statstally/platforms/android/assets/www/js/controllers/projectStatsCtrl.js \
+/Users/strebel/Desktop/statstally/platforms/android/assets/www/js/services/projectTemplateService.js \
 /Users/strebel/Desktop/statstally/platforms/android/assets/www/lib/angular-cookies.min.js \
 /Users/strebel/Desktop/statstally/platforms/android/assets/www/lib/angularLocalStorage.js \
 /Users/strebel/Desktop/statstally/platforms/android/assets/www/lib/crypto-js \

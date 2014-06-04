@@ -1,10 +1,16 @@
 angular.module('statstally.controllers')
 
-.controller('NewProjectCtrl', ['$scope', '$ionicPopup', 'storage', '$ionicNavBarDelegate', '$state', function($scope, $ionicPopup, storage, $ionicNavBarDelegate, $state) {
+.controller('NewProjectCtrl', ['$scope', '$ionicPopup', 'storage', '$ionicNavBarDelegate', '$state', '$stateParams', 'templates', function($scope, $ionicPopup, storage, $ionicNavBarDelegate, $state, $stateParams, templates) {
+
 
   $scope.project = {
     name: "",
     clickers : []
+  }
+
+  // Copy clickers of the template if a template is specified
+  if($stateParams['template']) {
+      $scope.project.clickers = templates[$stateParams['template']].clickers;
   }
 
   $scope.newClicker = {

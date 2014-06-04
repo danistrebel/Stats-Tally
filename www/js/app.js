@@ -7,6 +7,7 @@
 angular.module('statstally',
   ['ionic',
   'statstally.controllers',
+  'statstally.services',
   'angularLocalStorage',
   'nvd3ChartDirectives'])
 
@@ -59,7 +60,7 @@ angular.module('statstally',
     })
 
     .state('app.new_project', {
-      url: "/projects/new",
+      url: "/projects/new?template",
       views: {
         'menuContent' :{
           templateUrl: "templates/newProject.html"
@@ -91,3 +92,4 @@ angular.module('statstally',
 
 
 angular.module('statstally.controllers', [])
+angular.module('statstally.services', [])

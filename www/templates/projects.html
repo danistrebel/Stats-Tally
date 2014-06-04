@@ -15,11 +15,8 @@
         Templates
       </div>
 
-      <a class="item" href="#">
-        5 Fruits a day
-      </a>
-      <a class="item" href="#">
-        How much did I drink?
+      <a class="item" ui-sref="app.new_project({template:$index})" ng-repeat="template in templates">
+        {{template.name}}
       </a>
     </div>
   </ion-content>
