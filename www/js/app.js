@@ -4,7 +4,11 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('statstally', ['ionic', 'statstally.controllers', 'angularLocalStorage'])
+angular.module('statstally',
+  ['ionic',
+  'statstally.controllers',
+  'angularLocalStorage',
+  'nvd3ChartDirectives'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -44,6 +48,16 @@ angular.module('statstally', ['ionic', 'statstally.controllers', 'angularLocalSt
       controller: 'ProjectsCtrl'
     })
 
+    .state('app.project', {
+      url: "/project/:id",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/project.html"
+        }
+      },
+      controller: 'NewProjectsCtrl'
+    })
+
     .state('app.new_project', {
       url: "/projects/new",
       views: {
@@ -61,7 +75,19 @@ angular.module('statstally', ['ionic', 'statstally.controllers', 'angularLocalSt
           templateUrl: "templates/statistics.html"
         }
       }
+    })
+
+    .state('app.stats', {
+      url: "/statistics/:project",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/projectStats.html"
+        }
+      }
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
 });
+
+
+angular.module('statstally.controllers', [])

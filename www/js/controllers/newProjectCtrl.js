@@ -1,6 +1,6 @@
 angular.module('statstally.controllers')
 
-.controller('NewProjectCtrl', ['$scope', '$ionicPopup', 'storage', '$ionicNavBarDelegate', function($scope, $ionicPopup, storage, $ionicNavBarDelegate) {
+.controller('NewProjectCtrl', ['$scope', '$ionicPopup', 'storage', '$ionicNavBarDelegate', '$state', function($scope, $ionicPopup, storage, $ionicNavBarDelegate, $state) {
 
   $scope.project = {
     name: "",
@@ -19,7 +19,7 @@ angular.module('statstally.controllers')
       });
     }
     else {
-      $scope.project.clickers.push({ name: $scope.newClicker.name, count: 0});
+      $scope.project.clickers.push({ name: $scope.newClicker.name, clicks: []});
       $scope.newClicker.name = "";
     }
 
@@ -44,7 +44,7 @@ angular.module('statstally.controllers')
 
       storage.set('st-pr-' + projectHash, $scope.project);
 
-      $ionicNavBarDelegate.back();
+      $state.go('app.projects');
 
     }
   }

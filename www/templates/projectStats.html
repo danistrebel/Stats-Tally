@@ -1,0 +1,34 @@
+<ion-view title="{{project.name}}" ng-controller="ProjectStatsCtrl">
+  <ion-content class="has-header">
+
+    <div>
+   	  <nvd3-pie-chart
+      	  data="project.clickers"
+          id="clickerPie"
+
+          width="350"
+          height="350"
+          x="clickerName()"
+          y="clickerCount()"
+          showLabels="true"
+          noData="No Data">
+          <svg height="250"></svg>
+      </nvd3-pie-chart>
+    </div>
+
+    <div>
+       <nvd3-line-chart
+    	  data="cumulatedClicks"
+        id="clickerTime"
+        width="400"
+        height="300"
+        showXAxis="true"
+        showYAxis="true"
+        	<svg></svg>
+    </nvd3-line-chart>
+    </div>
+
+
+
+  </ion-content>
+</ion-view>

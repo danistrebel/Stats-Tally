@@ -1,8 +1,12 @@
-<ion-view title="Statistics">
+<ion-view title="Statistics" ng-controller="ProjectsCtrl">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <h3>Coming Soon..</h3>
+    <div class="list">
+      <a class="item" ui-sref="app.stats({project: hash})" ng-repeat="(hash, name) in projects">
+        {{name}}
+      </a>
+    </div>
   </ion-content>
 </ion-view>

@@ -1,0 +1,17 @@
+<ion-view title="{{project.name}}" ng-controller="ProjectCtrl">
+  <ion-content class="has-header">
+
+    <ul class="list">
+      <li class="item" ng-repeat="clicker in project.clickers">
+        <div class="row">
+          <div class="col">
+            <button class="button button-full button-positive" ng-click="click(clicker)">{{clicker.name}}</button>
+          </div>
+          <div class="col click-count"><span>{{clicker.clicks.length}}<span></div>
+        </div>
+
+      </li>
+    </ul>
+
+  </ion-content>
+</ion-view>
