@@ -1,34 +1,37 @@
-<ion-view title="{{project.name}}" ng-controller="ProjectStatsCtrl">
+<ion-view title="{{project.name}}" ng-controller="ProjectStatsCtrl" hide-back-button="{{statsOptions.optionsShown}}">
   <ion-content class="has-header">
+    <ion-nav-buttons side="right" ng-if="!statsOptions.optionsShown">
+      <button class="button button-icon icon ion-gear-a" ng-click="showOptions()"></button>
+    </ion-nav-buttons>
 
-    <div>
-   	  <nvd3-pie-chart
-      	  data="project.clickers"
-          id="clickerPie"
+    <ion-nav-buttons side="left" ng-if="statsOptions.optionsShown">
+      <button class="button button-clear button-positive" ng-click="cancelOptions()">cancel</button>
+    </ion-nav-buttons>
 
-          width="350"
-          height="350"
-          x="clickerName()"
-          y="clickerCount()"
-          showLabels="true"
-          noData="No Data">
-          <svg height="250"></svg>
-      </nvd3-pie-chart>
+    <ion-nav-buttons side="right" ng-if="statsOptions.optionsShown">
+      <button class="button button-clear button-positive" ng-click="applyOptions()">done</button>
+    </ion-nav-buttons>
+
+    <div class="list" ng-if="statsOptions.optionsShown">
+
+      <div class="item item-divider">
+        Clickers
+      </div>
+
+      <div class="item item-icon-right" ng-repeat="clicker in project.clickers" ng-click="toggleSelectedClicker($index)">
+        {{clicker.name}}
+        <i class="icon ion-checkmark-round" ng-if="statsOptions.selectedClickers[$index]"></i>
+      </div>
     </div>
 
-    <div>
-       <nvd3-line-chart
-    	  data="cumulatedClicks"
-        id="clickerTime"
-        width="400"
-        height="300"
-        showXAxis="true"
-        showYAxis="true"
-        	<svg></svg>
-    </nvd3-line-chart>
-    </div>
-
-
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" ng-hide="statsOptions.optionsShown">
+      <ion-slide>
+        <div ng-include="'./templates/stats/pie.html'"></div>
+      </ion-slide>
+      <ion-slide>
+        <div ng-include="'./templates/stats/lines.html'"></div>
+      </ion-slide>
+    </ion-slide-box>
 
   </ion-content>
 </ion-view>
