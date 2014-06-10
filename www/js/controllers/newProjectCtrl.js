@@ -10,7 +10,8 @@ angular.module('statstally.controllers')
 
   // Copy clickers of the template if a template is specified
   if($stateParams['template']) {
-      $scope.project.clickers = templates[$stateParams['template']].clickers;
+      //Assign a copy so that the clickers in the template remain unmodified
+      $scope.project.clickers = angular.copy(templates[$stateParams['template']].clickers);
   }
 
   $scope.newClicker = {
